@@ -1,11 +1,11 @@
 package application;
 
-import util.Cliente;
-import util.ContaBancaria;
+import entities.Cliente;
+import entities.ContaBancaria;
 
 import java.util.Scanner;
 
-import static configs.GeradorNumConta.geradorNumConta;
+import static util.GeradorNumConta.geradorNumConta;
 
 public class Program {
     public static void main(String[]args){

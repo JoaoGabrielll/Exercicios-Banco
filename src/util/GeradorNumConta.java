@@ -1,4 +1,4 @@
-package configs;
+package util;
 
 import java.security.SecureRandom;
 
