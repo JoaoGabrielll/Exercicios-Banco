@@ -17,7 +17,7 @@ public class Program {
 
         String numeroGerado = geradorNumConta(numConta);
 
-        /*System.out.println("-----Bem-Vindo ao nosso banco-----");
+        System.out.println("-----Bem-Vindo ao nosso banco-----");
 
         System.out.println("Para abrir uma conta, insira seus dados");
         System.out.println("Nome completo");
@@ -43,7 +43,7 @@ public class Program {
             }
         } while (dataNascimento.length() != 8);
 
-        Cliente cliente = new Cliente(nome, cpf, dataNascimento);*/
+        Cliente cliente = new Cliente(nome, cpf, dataNascimento);
         ContaBancaria conta = new ContaBancaria(numeroGerado, 0);
 
         System.out.println("Parabéns! Sua conta foi criada" +
