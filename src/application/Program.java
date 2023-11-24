@@ -2,6 +2,7 @@ package application;
 
 import entities.Cliente;
 import entities.ContaBancaria;
+import util.Formatadores;
 
 import java.util.Scanner;
 
@@ -11,8 +12,10 @@ public class Program {
     public static void main(String[]args){
         Scanner tc = new Scanner(System.in);
 
-        //Definindo a quantidade de caracters do numero da conta bancária
+        //Definindo a quantidade de caracters do numero da conta bancária:
         int numConta = 6;
+        //Demais variaveis:
+        String senha;
         String nome, cpf, dataNascimento;
 
         String numeroGerado = geradorNumConta(numConta);
@@ -42,6 +45,15 @@ public class Program {
                 System.out.println("Data invalida. A data deve conter 8 dígitos.");
             }
         } while (dataNascimento.length() != 8);
+
+        do {
+            System.out.println("Crie uma senha numerica de 4 digitos");
+            senha = tc.nextLine();
+
+            if (senha.length() != 4){
+                System.out.println("[ERRO]A senha numerica deve conter 4 digitos");
+            }
+        } while (senha.length() != 4);
 
         Cliente cliente = new Cliente(nome, cpf, dataNascimento);
         ContaBancaria conta = new ContaBancaria(numeroGerado, 0);
