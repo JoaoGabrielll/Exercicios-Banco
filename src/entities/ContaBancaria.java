@@ -6,14 +6,11 @@ public class ContaBancaria {
 
     private String numConta;
     private double saldo;
-    private double deposito;
-    private double saque;
 
-    public ContaBancaria(String numConta, double saldo, double deposito, double saque){
+    public ContaBancaria(String numConta, double saldo){
         this.numConta = numConta;
         this.saldo = saldo;
-        this.deposito = deposito;
-        this.saque = saque;
+
     }
     public String getNumConta() {
         return numConta;
@@ -30,20 +27,34 @@ public class ContaBancaria {
         this.saldo = saldo;
     }
 
-    public double getDeposito() {
-        return deposito;
-    }
-    public void setDeposito(double deposito) {
-        this.deposito = deposito;
-    }
-
-    public double getSaque() {
-        return saque;
-    }
-    public void setSaque(double saque) {
-        this.saque = saque;
+    //Metodo para depositos na conta:
+    public String depositoEmConta(double deposito){
+            this.saldo += deposito;
+            System.out.println("Deposito de " +
+                    Formatadores.formatarSaldoConta(deposito) +
+                    " efetuado");
+            return "Saldo atual da conta: " + Formatadores.formatarSaldoConta(saldo);
     }
 
+    //Metodo para saque na conta:
+    public String saqueConta(double valorSaque){
+
+        double valorTotalSaque = valorSaque + 2.0;
+
+        if (valorTotalSaque <= this.saldo && valorSaque >= 0){
+            this.saldo -= valorTotalSaque;
+            System.out.println("Saque de " +
+                    Formatadores.formatarSaldoConta(valorSaque) +
+                    " efetuado");
+            return "Saldo atual da conta: " + Formatadores.formatarSaldoConta(saldo);
+        }else{
+            return "Saldo indisponivel para saque";
+        }
+    }
+
+    public String mostrarSaldo(){
+        return "Saldo:" + Formatadores.formatarSaldoConta(saldo);
+    }
 
     public String toString(){
         return "\nEsse é o numero da sua conta: " +
