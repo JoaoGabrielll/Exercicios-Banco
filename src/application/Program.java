@@ -2,10 +2,7 @@ package application;
 
 import entities.Cliente;
 import entities.ContaBancaria;
-import util.Formatadores;
-
 import java.util.Scanner;
-
 import static util.GeradorNumConta.geradorNumConta;
 
 public class Program {
@@ -61,7 +58,7 @@ public class Program {
         System.out.println("Parabéns! Sua conta foi criada" +
                 "\n-----Seus Dados-----");
 
-        //System.out.println(cliente);
+        System.out.println(cliente);
         System.out.println(conta);
 
         System.out.println("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⢛⣿⣿⣿⣿⠟⠛⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" +

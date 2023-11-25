@@ -11,7 +11,6 @@ public class Cliente {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
-
     }
 
     public String getNome(){
