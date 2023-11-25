@@ -92,19 +92,32 @@ public class Program {
                 break;
                 case 2:
                     double saque;
+                    String senhaSaque = senha;
+
                     do {
                         System.out.println("Valor de saque:");
                         saque = tc.nextInt();
 
                         if (saque <= 0){
-                            System.out.println("Saldo na conta indisponivel");
+                            System.out.println("Valor incorreto");
                         }
+
                     }while (saque <= 0);
 
+                    do {
+                        System.out.println("Digite sua senha");
+                        senhaSaque = tc.nextLine();
+
+                        if (senhaSaque != senha) {
+                            System.out.println("Senha incorreta");
+                        }
+                    }while (senhaSaque != senha);
                     System.out.println(conta.saqueConta(saque));
+
                 break;
                 case 3:
                     System.out.println(conta.mostrarSaldo());
+
                 break;
                 case 4:
                     System.out.println("Encerrando sistema!");
