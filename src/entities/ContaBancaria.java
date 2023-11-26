@@ -27,7 +27,7 @@ public class ContaBancaria {
         this.saldo = saldo;
     }
 
-    //Metodo para depositos na conta:
+    //Método para depositos na conta:
     public String depositoEmConta(double deposito){
             this.saldo += deposito;
             System.out.println("Deposito de " +
@@ -36,7 +36,7 @@ public class ContaBancaria {
             return "Saldo atual da conta: " + Formatadores.formatarSaldoConta(saldo);
     }
 
-    //Metodo para saque na conta:
+    //Método para saque na conta:
     public String saqueConta(double valorSaque){
 
         double valorTotalSaque = valorSaque + 2.0;
@@ -56,6 +56,7 @@ public class ContaBancaria {
         return "Saldo:" + Formatadores.formatarSaldoConta(saldo);
     }
 
+    //Método para mostrar os dados do cliente:
     public String toString(){
         return "\nEsse é o numero da sua conta: " +
                 Formatadores.formatarNumConta(numConta) +

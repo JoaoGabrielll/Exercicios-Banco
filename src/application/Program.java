@@ -15,10 +15,10 @@ public class Program {
         String senha;
         String nome, cpf, dataNascimento;
 
+        //Variável responsável para receber o número da conta que for gerado:
         String numeroGerado = geradorNumConta(numConta);
 
         System.out.println("-----Bem-Vindo ao nosso banco-----");
-
         System.out.println("Para abrir uma conta, insira seus dados");
         System.out.println("Nome completo");
         nome = tc.nextLine();
@@ -52,6 +52,7 @@ public class Program {
             }
         } while (senha.length() != 4);
 
+        //Instanciando objetos:
         Cliente cliente = new Cliente(nome, cpf, dataNascimento);
         ContaBancaria conta = new ContaBancaria(numeroGerado, 0);
 
@@ -77,6 +78,7 @@ public class Program {
                     "\n3- Consultar saldo" +
                     "\n4- Sair");
             opcao = tc.nextInt();
+                    tc.nextLine();
 
             switch (opcao){
                 case 1:
@@ -92,7 +94,7 @@ public class Program {
                 break;
                 case 2:
                     double saque;
-                    String senhaSaque = senha;
+                    String senhaSaque;
 
                     do {
                         System.out.println("Valor de saque:");
@@ -103,15 +105,16 @@ public class Program {
                         }
 
                     }while (saque <= 0);
+                    tc.nextLine();
 
                     do {
                         System.out.println("Digite sua senha");
                         senhaSaque = tc.nextLine();
 
-                        if (senhaSaque != senha) {
+                        if (!senhaSaque.equals(senha)) {
                             System.out.println("Senha incorreta");
                         }
-                    }while (senhaSaque != senha);
+                    }while (!senhaSaque.equals(senha));
                     System.out.println(conta.saqueConta(saque));
 
                 break;
